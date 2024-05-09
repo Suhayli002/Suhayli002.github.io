@@ -1,62 +1,71 @@
+/* Глобальные стили */
 body {
-	margin: 0;
-	padding: 0;
-	font-size: 18px;
-	color: var(--tg-theme-text-color);
-	background: var(--tg-theme-bg-color);
+  font-family: sans-serif;  /* Чистый, читаемый шрифт */
+  margin: 0;              /* Убрать стандартные отступы браузера */
+  padding: 0;              /* Убрать стандартную набивку браузера */
+  background-color: #f5f5f5; /* Светлый фон для лучшего контраста */
 }
 
+/* Стили контейнера */
 .container {
-	max-width: 390px;
+  width: 100vw;               /* Растянуть контейнер на всю ширину окна */
+  height: 100vh;              /* Растянуть контейнер на всю высоту окна (необязательно) */
+  display: flex;             /* Разрешить элементам выстраиваться горизонтально */
+  justify-content: center;   /* Центрировать элементы по горизонтали в контейнере */
+  align-items: center;       /* Центрировать элементы по вертикали в контейнере */
 }
 
+/* Стили внутреннего контейнера */
 .inner {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 200px 200px 200px;
+  display: flex;
+  flex-wrap: wrap;           /* Разрешить элементам переноситься на несколько строк */
+  justify-content: space-evenly; /* Равномерно распределить элементы с некоторым отступом */
+  width: 80%;                /* Определить меньшую ширину для внутреннего контейнера */
+  max-width: 600px;          /* Установить максимальную ширину для адаптивных макетов */
+  background-color: #fff;    /* Белый фон для внутренней секции */
+  border-radius: 10px;       /* Закругленные углы для более мягкого вида */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Небольшая тень для глубины */
 }
 
-.img {
-	width: 150px;
-}
-
+/* Стили элементов */
 .item {
-	text-align: center;
+  margin: 10px;            /* Добавить расстояние между элементами */
+  text-align: center;      /* Центрировать содержимое в каждом элементе */
+  position: relative;       /* Необходимо для эффектов наведения на кнопки */
 }
 
-.btn {
-	display: inline-block;
-	padding: 10px 20px;
-	border: none;
-	background: rgb(248, 168, 24);
-	border-radius: 10px;
-	color: #fff;
-	text-transform: uppercase;
-	font-weight: 700;
-
-	transition: background .2s linear;
+.item img {
+  width: 100%;             /* Масштабировать изображения под их контейнеры */
+  border-radius: 10px;       /* Закругленные углы для изображений */
 }
 
-.btn:hover {
-	background: lightgreen;
+.item button {
+  position: absolute;       /* Позиционировать кнопки внутри контейнеров элементов */
+  bottom: 10px;              /* Разместить кнопки внизу */
+  left: 50%;                 /* Центрировать кнопки по горизонтали */
+  transform: translateX(-50%); /* Исправить позиционирование кнопок */
+  background-color: #388e3c;  /* Зеленый цвет кнопки */
+  color: #fff;               /* Белый цвет текста */
+  padding: 10px 20px;        /* Добавить немного отступов для удобочитаемости */
+  border: none;              /* Убрать стандартные границы кнопок */
+  border-radius: 5px;        /* Закругленные углы для кнопок */
+  font-weight: bold;        /* Сделать текст кнопки жирным */
+  cursor: pointer;           /* Указать на возможность нажатия при наведении */
+  transition: background-color 0.2s ease; /* Плавный переход цвета фона при наведении */
 }
 
-.usercard {
-	text-align: center;
+.item button:hover {
+  background-color: #2e7d32; /* Затемнить цвет кнопки при наведении */
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Стили карточки пользователя */
+#usercard {
+  /* Стили для карточки пользователя можно добавить сюда, когда будет определено ее содержимое */
+  display: none;            /* Скрыть карточку пользователя изначально (необязательно) */
+  position: absolute;       /* Разрешить гибкое позиционирование */
+  top: 50%;                   /* Центрировать по вертикали */
+  left: 50%;                  /* Центрировать по горизонтали */
+  transform: translate(-50%, -50%);  /* Исправить позиционирование */
+  background-color: #fff;    /* Белый фон для карточки пользователя */
+  border-radius: 10px;       /* Закругленные углы для карточки пользователя */
+  padding: 20px;
