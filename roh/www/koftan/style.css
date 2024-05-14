@@ -1,0 +1,142 @@
+.button-container {
+    /* Центрируем текст внутри .button-container */
+    text-align: center;
+    /* Убираем маркеры списка (bullet points) */
+    list-style: none;
+    /* Убираем отступы по умолчанию */
+    padding: 0;
+}
+
+#searchInput {
+    /* Устанавливаем элемент input как блочный, чтобы задать ширину и центрировать его */
+    display: block;
+    /* Центрируем элемент по горизонтали */
+    margin: 0 auto;
+}
+
+.button {
+    /* Устанавливаем шрифт для кнопок */
+    font-family: "Trebuchet MS", "Lucida Sans";
+    /* Добавляем отступ снизу */
+    margin-bottom: 10px;
+    /* Создаем скругленные углы */
+    border-radius: 20px;
+    /* Устанавливаем размер шрифта */
+    font-size: 20px;
+    /* Устанавливаем расстояние между буквами */
+    letter-spacing: 2px;
+    /* Добавляем плавные переходы для всех свойств при наведении */
+    transition: 0.1s all linear;
+    /* Устанавливаем элемент как блочный и центрируем по горизонтали */
+    display: block;
+    margin: 10px auto;
+    /* Задаем позицию элемента */
+    position: relative;
+    /* Устанавливаем фоновый цвет кнопки */
+    background-color: #3498db;
+    /* Устанавливаем цвет текста */
+    color: #fff;
+    /* Добавляем отступы внутри кнопки */
+    padding: 7px 20px;
+    /* Убираем границу */
+    border: none;
+    /* Создаем скругленные углы */
+    border-radius: 5px;
+    /* Изменяем курсор при наведении на кнопку */
+    cursor: pointer;
+    /* Добавляем тень с несколькими параметрами */
+    box-shadow: 2px -2px 5px 0 rgba(0, 0, 0, 0.1),
+        -2px -2px 5px 0 rgba(0, 0, 0, 0.1),
+        2px 2px 5px 0 rgba(0, 0, 0, 0.1),
+        -2px 2px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Изменяем фоновый цвет при наведении на кнопку */
+.button:hover {
+    background-color: #2980b9;
+    /* Добавляем левую границу при наведении */
+    border-left: 10px solid transparent;
+}
+.popover {
+    /* Скрываем .popover по умолчанию */
+    display: none;
+    /* Позиционируем .popover абсолютно относительно родительского элемента */
+    position: absolute;
+    /* Устанавливаем .popover под родительским элементом (на 100% внизу) и слева от него (0) */
+    top: 40px;
+    left: -20px;
+    /* Устанавливаем градиентный фон от тёмно-серого (#333333) вверху к чёрному (#000000) внизу */
+    background: linear-gradient(to bottom, #333333, #000000);
+    /* Устанавливаем белый цвет текста для лучшей видимости на тёмном фоне */
+    color: #ffffff;
+    /* Добавляем отступы и границу */
+    padding: 10px;
+    border: 1px solid #ccc;
+    /* Создаем скругленные углы */
+    border-radius: 20px;
+    /* Добавляем тень с небольшим размытием */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+    /* Устанавливаем z-index, чтобы .popover был поверх других элементов */
+    z-index: 1;
+    /* Задаем ширину .popover */
+    width: 220px;
+    /* Добавляем плавные переходы для opacity и transform при появлении и исчезновении .popover */
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+/* Показываем .popover при применении класса .show */
+.popover.show {
+    display: block;
+    opacity: 1;
+    /* Двигаем .popover вниз на 10px при показе */
+    transform: translateY(10px);
+}
+
+/* Показываем .popover при наведении на соответствующую кнопку */
+.button:hover + .popover {
+    display: block;
+}
+
+.button-container {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+}
+
+.button {
+    font-family: "Trebuchet MS", "Lucida Sans";
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    transition: 0.3s all linear;
+    display: block;
+    margin: 10px auto;
+    position: relative;
+    background-color: #3498db;
+    color: #fff;
+    padding: 7px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px -2px 5px 0 rgba(0, 0, 0, 0.1),
+        -2px -2px 5px 0 rgba(0, 0, 0, 0.1),
+        2px 2px 5px 0 rgba(0, 0, 0, 0.1),
+        -2px 2px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+    background-color: #2980b9;
+    border-left: 10px solid transparent;
+}
+
+.button:hover + .popover {
+    display: block;
+}
+
+body {
+    background: linear-gradient(to bottom, #333333, #000000);
+    background-attachment: fixed;
+    background-size: cover;
+    color: #ffffff;
+}
