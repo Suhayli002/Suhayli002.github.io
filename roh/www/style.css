@@ -1,0 +1,90 @@
+/* Общие стили для страницы */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+/* Стили для элемента с классом d14 */
+.d14 {
+    text-align: center;
+    margin: 20px;
+}
+
+/* Стили для заголовка третьего уровня */
+h3 {
+    color: #333;
+}
+
+/* Стили для таблицы */
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-top: 15px
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для ячеек таблицы */
+td {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Hover-эффект для ячеек таблицы */
+td:hover {
+    background-color: #f9f9f9;
+}
+
+/* Стили для кнопки с классом custom-btn */
+.custom-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 1px 1px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover-эффект для кнопки */
+.custom-btn:hover {
+    background-color: #45a049;
+}
+
+/* Стили для элемента с классом btn- и вложенного элемента span */
+.btn- span {
+    font-weight: bold;
+}
+
+/* Стили для ссылок */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+/* Hover-эффект для ссылок */
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* Дополнительные стили для .d14 h3 */
+.d14 h3 {
+    color: #FFC107;
+    font-size: 1.4em;
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+body {
+  background: -webkit-linear-gradient(45deg, rgb(20, 43, 38) 40%, rgb(117, 136, 36) 78%);
+  background: -moz-linear-gradient(45deg, rgb(20, 43, 38) 40%, rgb(117, 136, 36) 78%);
+  background: linear-gradient(45deg, rgb(20, 43, 38) 40%, rgb(117, 136, 36) 78%);
+  font-family: Arial, sans-serif;
+}
