@@ -1,71 +1,170 @@
-/* Глобальные стили */
 body {
-  font-family: sans-serif;  /* Чистый, читаемый шрифт */
-  margin: 0;              /* Убрать стандартные отступы браузера */
-  padding: 0;              /* Убрать стандартную набивку браузера */
-  background-color: #f5f5f5; /* Светлый фон для лучшего контраста */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
 }
 
-/* Стили контейнера */
-.container {
-  width: 100vw;               /* Растянуть контейнер на всю ширину окна */
-  height: 100vh;              /* Растянуть контейнер на всю высоту окна (необязательно) */
-  display: flex;             /* Разрешить элементам выстраиваться горизонтально */
-  justify-content: center;   /* Центрировать элементы по горизонтали в контейнере */
-  align-items: center;       /* Центрировать элементы по вертикали в контейнере */
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.header {
+    background-color: #ff6f00;
+    border-radius: 2%;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    font: bold 20px/3 Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 30px;
+    text-shadow: 8px 6px 4px rgba(0, 0, 1, 0.8);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Стили внутреннего контейнера */
-.inner {
-  display: flex;
-  flex-wrap: wrap;           /* Разрешить элементам переноситься на несколько строк */
-  justify-content: space-evenly; /* Равномерно распределить элементы с некоторым отступом */
-  width: 80%;                /* Определить меньшую ширину для внутреннего контейнера */
-  max-width: 600px;          /* Установить максимальную ширину для адаптивных макетов */
-  background-color: #fff;    /* Белый фон для внутренней секции */
-  border-radius: 10px;       /* Закругленные углы для более мягкого вида */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Небольшая тень для глубины */
+.header::before, .header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background: rgba(50, 50, 50, 0.3);
+    z-index: 1;
+    transform: skewX(-30deg);
 }
 
-/* Стили элементов */
-.item {
-  margin: 10px;            /* Добавить расстояние между элементами */
-  text-align: center;      /* Центрировать содержимое в каждом элементе */
-  position: relative;       /* Необходимо для эффектов наведения на кнопки */
+
+.header::before {
+    left: 0%;
 }
 
-.item img {
-  width: 100%;             /* Масштабировать изображения под их контейнеры */
-  border-radius: 10px;       /* Закругленные углы для изображений */
+.header::after {
+    right: -150%;
+}
+@keyframes slide {
+    0% { transform: translateX(-200%); }
+    100% { transform: translateX(200%); }
 }
 
-.item button {
-  position: absolute;       /* Позиционировать кнопки внутри контейнеров элементов */
-  bottom: 10px;              /* Разместить кнопки внизу */
-  left: 50%;                 /* Центрировать кнопки по горизонтали */
-  transform: translateX(-50%); /* Исправить позиционирование кнопок */
-  background-color: #388e3c;  /* Зеленый цвет кнопки */
-  color: #fff;               /* Белый цвет текста */
-  padding: 10px 20px;        /* Добавить немного отступов для удобочитаемости */
-  border: none;              /* Убрать стандартные границы кнопок */
-  border-radius: 5px;        /* Закругленные углы для кнопок */
-  font-weight: bold;        /* Сделать текст кнопки жирным */
-  cursor: pointer;           /* Указать на возможность нажатия при наведении */
-  transition: background-color 0.2s ease; /* Плавный переход цвета фона при наведении */
+.header::before, .header::after {
+    animation: slide 7s linear infinite;
 }
 
-.item button:hover {
-  background-color: #2e7d32; /* Затемнить цвет кнопки при наведении */
+.header span {
+    position: relative;
+    z-index: 2;
 }
 
-/* Стили карточки пользователя */
-#usercard {
-  /* Стили для карточки пользователя можно добавить сюда, когда будет определено ее содержимое */
-  display: none;            /* Скрыть карточку пользователя изначально (необязательно) */
-  position: absolute;       /* Разрешить гибкое позиционирование */
-  top: 50%;                   /* Центрировать по вертикали */
-  left: 50%;                  /* Центрировать по горизонтали */
-  transform: translate(-50%, -50%);  /* Исправить позиционирование */
-  background-color: #fff;    /* Белый фон для карточки пользователя */
-  border-radius: 10px;       /* Закругленные углы для карточки пользователя */
-  padding: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+.content .menu a span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: #000000;
+    text-shadow: 4px 4px 4px rgba(1, 5, 0, 0.5);
+    animation: colorChange 3s infinite alternate, fadeIn 2s ease-in-out;
+}
+
+@keyframes colorChange {
+    0% { color: #000000; }
+    100% { color: #5F9EA0; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.content {
+    max-width: 380px;
+    margin: 5px auto;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-button.prev { left: 10px; }
+
+.carousel-button.next { right: 10px; }
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    text-decoration: none;
+    color: black;
+    border-top: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.4s, transform 0.3s;
+}
+
+.menu a:first-child { border-top: none; }
+
+.menu a img {
+    width: 80px;
+    height: auto;
+    margin-right: 30px;
+}
+
+.menu a:hover {
+    background-color: #ff6f00;
+    color: white;
+    transform: scale(1.05);
+}
+
+.kaleso {
+    margin-top: 7px;
+}
+
+.kaleso img {
+    width: 370px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 9%;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.kaleso img:hover {
+    transform: scale(1.1);
